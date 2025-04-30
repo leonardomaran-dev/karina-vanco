@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #b0197e;
+    --color-secondary: #e5e5e5;
+    --font-primary: Quicksand;
+    --font-secondary: Poppins;
+}
