@@ -7,6 +7,13 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   base: '/karina-vanco',
+  build: {
+    rollupOptions: {
+      output: {
+        format: 'es'
+      }
+    }
+  },
   plugins: [
     vue(),
     vueDevTools(),
