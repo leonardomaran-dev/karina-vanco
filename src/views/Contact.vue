@@ -25,12 +25,12 @@
             Me mande uma mensagem
           </h2>
           <form
-            
             class="space-y-6"
             name="contact"
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
+            action="/success"
           >
             <input type="hidden" name="form-name" value="contact" />
             <div class="hidden">
@@ -202,7 +202,6 @@ function showFlashMessage(type, title, message) {
     message,
   };
 
-  // Esconder a mensagem após 5 segundos
   setTimeout(() => {
     hideFlashMessage();
   }, 5000);
@@ -210,46 +209,5 @@ function showFlashMessage(type, title, message) {
 
 function hideFlashMessage() {
   flashMessage.value.show = false;
-}
-
-async function sendForm() {
-  loading.value = true;
-  try {
-    const formData = new FormData();
-    formData.append('name', name.value);
-    formData.append('email', email.value);
-    formData.append('subject', subject.value);
-    formData.append('message', message.value);
-
-    const response = await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString()
-    });
-
-    if (!response.ok) {
-      throw new Error('Falha ao enviar mensagem');
-    }
-
-    showFlashMessage(
-      'success',
-      'Mensagem Enviada!',
-      'Recebemos sua mensagem e retornaremos em breve.'
-    );
-
-    name.value = '';
-    email.value = '';
-    subject.value = '';
-    message.value = '';
-  } catch (error) {
-    console.error('Erro ao enviar o email:', error);
-    showFlashMessage(
-      'error',
-      'Erro ao Enviar',
-      'Desculpe, não foi possível enviar sua mensagem. Por favor, tente novamente.'
-    );
-  } finally {
-    loading.value = false;
-  }
 }
 </script>
