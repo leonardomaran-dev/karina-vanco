@@ -223,17 +223,10 @@ async function sendForm() {
     formData.append('subject', subject.value);
     formData.append('message', message.value);
 
-    const response = await fetch('/.netlify/functions/send-email', {
+    const response = await fetch('/', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: name.value,
-        email: email.value,
-        subject: subject.value,
-        message: message.value
-      })
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
     });
 
     if (!response.ok) {
