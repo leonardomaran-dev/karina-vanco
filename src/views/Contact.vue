@@ -32,10 +32,6 @@
             netlify-honeypot="bot-field"
             action="/"
           >
-            <input type="hidden" name="form-name" value="contact" />
-            <div class="hidden">
-              <input name="bot-field" />
-            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <!-- Nome -->
               <div>
