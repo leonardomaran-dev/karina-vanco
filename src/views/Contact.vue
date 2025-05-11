@@ -25,7 +25,7 @@
             Me mande uma mensagem
           </h2>
           <form
-            @submit.prevent="sendForm"
+            
             class="space-y-6"
             name="contact"
             method="POST"
@@ -186,8 +186,6 @@ const email = ref("");
 const subject = ref("");
 const message = ref("");
 const loading = ref(false);
-
-const apiKey = import.meta.env.VITE_RESEND_API_KEY;
 
 const flashMessage = ref({
   show: false,
