@@ -1,16 +1,18 @@
 {
-  "name": "Karina Vanço",
+  "name": "karina-vanco",
   "version": "1.0",
   "private": true,
   "type": "module",
   "scripts": {
+    "deploy": "vite build && git add dist -f && git commit -m 'deploy' && git subtree push --prefix dist origin gh-pages",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
-    "pinia": "^3.0.1",
+    "pinia": "^3.0.2",
+    "resend": "^4.5.1",
     "tailwindcss": "^4.1.4",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"

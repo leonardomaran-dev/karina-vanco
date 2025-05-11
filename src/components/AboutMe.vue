@@ -11,18 +11,18 @@
       </div>
     </div>
     <div
-      class="bg-white lg:bg-[url('@/assets/images/bg-karina.png')] bg-cover bg-center flex flex-col lg:flex-row lg:justify-end overflow-hidden shadow-[0_8px_20px_rgba(0,0,0,0.1)]"
+      class="bg-white lg:bg-[url('@/assets/images/bg-karina.png')] bg-cover bg-center flex flex-col lg:flex-row lg:justify-end overflow-hidden shadow-[0_8px_20px_rgba(0,0,0,0.1)] rounded-xl"
     >
       <div
         class="w-full lg:w-1/2 p-6 md:p-12 bg-white lg:bg-gradient-to-r lg:from-white/70 lg:to-white/90 lg:backdrop-blur-sm"
       >
         <h1
-          class="text-2xl md:text-3xl text-center text-primary font-bold tracking-wide mb-2.5"
+          class="text-2xl md:text-3xl text-center text-secondary font-bold tracking-wide mb-2.5"
         >
           CONHECENDO A NUTRI KARINA
         </h1>
 
-        <div class="h-[3px] w-20 bg-primary mx-auto rounded-md mb-6"></div>
+        <div class="h-[3px] w-20 bg-secondary mx-auto rounded-md mb-6"></div>
 
         <p
           class="text-base md:text-lg leading-[1.7] text-gray-700 text-justify"

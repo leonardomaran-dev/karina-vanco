@@ -1,6 +1,6 @@
 <script setup>
-import Navbar from "../components/Navbar.vue";
-import Footer from "../components/Footer.vue";
+import Navbar from "../Navbar.vue";
+import Footer from "../Footer.vue";
 </script>
 <template>
   <div class="min-h-screen font-primary bg-neutral-200">

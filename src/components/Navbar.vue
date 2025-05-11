@@ -17,7 +17,7 @@
         <!-- Menu Hamburguer para Mobile -->
         <button
           @click="isMenuOpen = !isMenuOpen"
-          class="lg:hidden text-white focus:outline-none hover:bg-white/10 p-2 rounded-lg transition-colors"
+          class="md:hidden text-white focus:outline-none hover:bg-white/10 p-2 rounded-lg transition-colors"
           aria-label="Menu"
         >
           <svg
@@ -47,16 +47,18 @@
         <nav
           :class="[
             isMenuOpen ? 'translate-x-0' : '-translate-x-full',
-            'lg:translate-x-0 fixed lg:static top-[72px] left-0 w-full lg:w-auto h-[calc(100vh-72px)] lg:h-auto bg-primary lg:bg-transparent transition-transform duration-300 ease-in-out lg:transition-none border-t border-white/10 lg:border-0',
+            'md:translate-x-0 fixed md:static top-[72px] left-0 w-full md:w-auto h-[calc(100vh-72px)] md:h-auto bg-primary md:bg-transparent transition-transform duration-300 ease-in-out md:transition-none border-t border-white/10 md:border-0',
           ]"
         >
-          <ul class="flex flex-col lg:flex-row gap-6 lg:gap-8 p-6 lg:p-0">
+          <ul
+            class="flex flex-col md:flex-row gap-6 md:gap-8 p-6 md:p-0 items-center"
+          >
             <li v-for="(item, index) in menuItems" :key="index">
               <a
                 v-if="item.path === '/'"
                 href="#"
                 @click.prevent="scrollToTop"
-                class="text-white font-medium text-lg block py-2 relative transition-all duration-300 hover:text-white/90 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:transition-[width] after:duration-300 hover:after:w-full router-link-active:font-bold router-link-active:after:w-full"
+                class="text-white font-medium text-lg block py-2 relative transition-all duration-300 md:hover:text-white/90 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:transition-[width] after:duration-300 md:hover:after:w-full router-link-active:font-bold router-link-active:after:w-full"
               >
                 {{ item.name }}
               </a>
@@ -64,14 +66,14 @@
                 v-else-if="item.path.startsWith('#')"
                 :href="item.path"
                 @click.prevent="scrollToSection(item.path.substring(1))"
-                class="text-white font-medium text-lg block py-2 relative transition-all duration-300 hover:text-white/90 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:transition-[width] after:duration-300 hover:after:w-full router-link-active:font-bold router-link-active:after:w-full"
+                class="text-white font-medium text-lg block py-2 relative transition-all duration-300 md:hover:text-white/90 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:transition-[width] after:duration-300 md:hover:after:w-full router-link-active:font-bold router-link-active:after:w-full"
               >
                 {{ item.name }}
               </a>
               <router-link
                 v-else
                 :to="item.path"
-                class="text-white font-medium text-lg block py-2 relative transition-all duration-300 hover:text-white/90 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:transition-[width] after:duration-300 hover:after:w-full router-link-active:font-bold router-link-active:after:w-full"
+                class="text-white font-medium text-lg block py-2 relative transition-all duration-300 md:hover:text-white/90 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:transition-[width] after:duration-300 md:hover:after:w-full router-link-active:font-bold router-link-active:after:w-full"
                 @click="isMenuOpen = false"
               >
                 {{ item.name }}

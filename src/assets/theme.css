@@ -4,7 +4,8 @@
 
 @theme {
     --color-primary: #b0197e;
-    --color-secondary: #e5e5e5;
+    --color-secondary: #02A1AA;
     --font-primary: Quicksand;
     --font-secondary: Poppins;
+    --breakpoint-teste: 37rem;
 }

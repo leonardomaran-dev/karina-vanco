@@ -1,6 +1,9 @@
+<script setup>
+import Button from "./ui/Button.vue";
+</script>
 <template>
   <section
-    class="relative overflow-hidden mb-10 shadow-[0_10px_30px_rgba(176,25,126,0.1)] xl:min-h-[calc(100vh-72px)] max-h-[900px] flex items-center"
+    class="mt-2 relative overflow-hidden mb-10 shadow-[0_10px_30px_rgba(176,25,126,0.1)] flex items-center rounded-xl"
   >
     <!-- Background Image -->
     <div
@@ -13,7 +16,7 @@
     ></div>
 
     <!-- Conteúdo Principal -->
-    <div class="relative w-full z-10">
+    <div class="relative w-full z-10 max-h-[900px]">
       <div class="container mx-auto">
         <div
           class="w-full lg:w-[55%] p-4 md:p-8 flex flex-col justify-center gap-3"
@@ -31,30 +34,20 @@
           </h1>
 
           <p
-            class="text-lg md:text-xl text-gray-700 max-w-[600px] mb-5 sm:mb-8 leading-relaxed"
+            class="text-shadow-lg teste:max-w-[55%] text-lg md:text-xl text-black font-medium max-w-[70%] sm:max-w-[60%] mb-3 sm:mb-8 leading-relaxed"
           >
             Transforme sua saúde com um plano alimentar que respeita suas
             preferências e estilo de vida.
           </p>
 
-          <!-- Botões -->
-          <div
-            class="flex justify-center sm:justify-start flex-wrap gap-2 sm:gap-4 mb-10"
+          <!-- Botão -->
+
+          <Button
+            href="https://api.whatsapp.com/send?phone=5519991554942"
+            bg="bg-secondary"
+            textColor="text-white"
+            >Agende uma consulta</Button
           >
-            <a
-              href="#sobre"
-              class="inline-flex items-center justify-center bg-primary text-white px-7 py-3.5 rounded-full font-semibold text-base transition-all duration-300 shadow-[0_5px_15px_rgba(176,25,126,0.2)] hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(176,25,126,0.3)]"
-            >
-              Conheça meu trabalho
-            </a>
-            <a
-              href="https://api.whatsapp.com/send?phone=5519991554942"
-              target="_blank"
-              class="inline-flex items-center justify-center bg-white text-primary px-7 py-3.5 rounded-full font-semibold text-base border-2 border-primary transition-all duration-300 hover:-translate-y-1 hover:bg-gray-50"
-            >
-              Agende uma consulta
-            </a>
-          </div>
 
           <!-- Estatísticas -->
           <div class="hidden sm:flex flex-wrap gap-8">
