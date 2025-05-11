@@ -29,8 +29,8 @@
             name="contact"
             method="POST"
             data-netlify="true"
-            netlify-honeypot="bot-field"
-            action="/"
+            
+            
           >
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <!-- Nome -->
