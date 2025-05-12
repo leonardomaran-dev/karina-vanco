@@ -1,12 +1,5 @@
 <template>
   <div class="min-h-screen bg-neutral-50 py-7">
-    <FlashMessage
-      :show="flashMessage.show"
-      :type="flashMessage.type"
-      :title="flashMessage.title"
-      :message="flashMessage.message"
-      :onClose="hideFlashMessage"
-    />
     <div class="container mx-auto px-4">
       <!-- Cabeçalho da Seção -->
       <div class="text-center mb-12">
@@ -178,7 +171,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import FlashMessage from "../components/ui/FlashMessage.vue";
+import FlashMessage from "@/components/ui/FlashMessage.vue";
 
 const router = useRouter();
 const name = ref("");
@@ -195,16 +188,12 @@ const flashMessage = ref({
 });
 
 function showFlashMessage(type, title, message) {
-  flashMessage.value = {
+  localStorage.setItem('flashMessage', JSON.stringify({
     show: true,
     type,
     title,
-    message,
-  };
-
-  setTimeout(() => {
-    hideFlashMessage();
-  }, 5000);
+    message
+  }));
 }
 
 function hideFlashMessage() {
@@ -228,13 +217,12 @@ const handleSubmit = () => {
     body: formData,
   })
     .then(() => {
-      router.push("/");
       showFlashMessage(
         "success",
         "Mensagem Enviada!",
         "Obrigado por entrar em contato! Recebemos sua mensagem e retornaremos em breve."
       );
-      console.log("deu certo");
+      router.push("/");
     })
     .catch((err) => {
       console.log("Erro ao enviar email", err);
