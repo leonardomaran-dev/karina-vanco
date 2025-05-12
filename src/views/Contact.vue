@@ -25,7 +25,7 @@
             Me mande uma mensagem
           </h2>
           <form
-            action="/pages/success"
+            action="@/views/success"
             class="space-y-6"
             name="contact"
             method="POST"
