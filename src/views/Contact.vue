@@ -228,8 +228,12 @@ const handleSubmit = () => {
     body: formData,
   })
     .then(() => {
-      router.push("/success");
-      console.log(formData);
+      showFlashMessage(
+        "success",
+        "Mensagem Enviada!",
+        "Obrigado por entrar em contato! Recebemos sua mensagem e retornaremos em breve."
+      );
+      console.log("deu certo");
     })
     .catch((err) => {
       console.log("Erro ao enviar email", err);
