@@ -30,7 +30,7 @@
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
-            action="/success"
+        
           >
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="_next" value="/success" />
