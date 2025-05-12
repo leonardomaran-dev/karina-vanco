@@ -177,8 +177,10 @@
 </template>
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 import FlashMessage from "../components/ui/FlashMessage.vue";
 
+const router = useRouter();
 const name = ref("");
 const email = ref("");
 const subject = ref("");
@@ -210,15 +212,25 @@ function hideFlashMessage() {
 }
 
 const handleSubmit = () => {
+  loading.value = true;
+  
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
   })
     .then(() => {
-      this.$router.push("success");
+      router.push("/success");
     })
     .catch((err) => {
       console.log("Erro ao enviar email", err);
+      showFlashMessage(
+        "error",
+        "Erro!",
+        "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente."
+      );
+    })
+    .finally(() => {
+      loading.value = false;
     });
 };
 </script>
