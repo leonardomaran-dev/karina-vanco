@@ -25,7 +25,7 @@
             Me mande uma mensagem
           </h2>
           <form
-            action="/success"
+            @submit.prevent="handleSubmit"
             class="space-y-6"
             name="contact"
             method="POST"
@@ -208,4 +208,15 @@ function showFlashMessage(type, title, message) {
 function hideFlashMessage() {
   flashMessage.value.show = false;
 }
+
+handleSubmit = () => {
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  }).then(() => {
+    this.$router.push("success").catch((err) => {
+      console.log("Erro ao enviar email", err);
+    });
+  });
+};
 </script>
