@@ -213,10 +213,12 @@ handleSubmit = () => {
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  }).then(() => {
-    this.$router.push("success").catch((err) => {
+  })
+    .then(() => {
+      this.$router.push("success");
+    })
+    .catch((err) => {
       console.log("Erro ao enviar email", err);
     });
-  });
 };
 </script>
