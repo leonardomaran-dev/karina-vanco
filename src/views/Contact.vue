@@ -228,6 +228,7 @@ const handleSubmit = () => {
     body: formData,
   })
     .then(() => {
+      router.push("/");
       showFlashMessage(
         "success",
         "Mensagem Enviada!",
