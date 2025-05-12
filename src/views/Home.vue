@@ -3,9 +3,7 @@ import Hero from "@/components/Hero.vue";
 import AboutMe from "@/components/AboutMe.vue";
 import Services from "@/components/Services.vue";
 import FlashMessage from "../components/ui/FlashMessage.vue";
-
 import { ref, onMounted } from "vue";
-import FlashMessage from "@/components/ui/FlashMessage.vue";
 
 const flashMessage = ref({
   show: false,
