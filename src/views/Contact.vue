@@ -213,22 +213,23 @@ function hideFlashMessage() {
 
 const handleSubmit = () => {
   loading.value = true;
-  
+
   // Criando o objeto FormData com os dados do formulário
   const formData = new URLSearchParams();
-  formData.append('form-name', 'contact');
-  formData.append('name', name.value);
-  formData.append('email', email.value);
-  formData.append('_subject', subject.value);
-  formData.append('message', message.value);
-  
+  formData.append("form-name", "contact");
+  formData.append("name", name.value);
+  formData.append("email", email.value);
+  formData.append("_subject", subject.value);
+  formData.append("message", message.value);
+
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: formData
+    body: formData,
   })
     .then(() => {
       router.push("/success");
+      console.log(formData);
     })
     .catch((err) => {
       console.log("Erro ao enviar email", err);
