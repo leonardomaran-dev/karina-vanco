@@ -209,7 +209,7 @@ function hideFlashMessage() {
   flashMessage.value.show = false;
 }
 
-handleSubmit = () => {
+const handleSubmit = () => {
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
